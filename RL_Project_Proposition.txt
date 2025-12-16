@@ -1,0 +1,147 @@
+École Polytechnique de Montréal
+
+INF8250AE
+Reinforcement Learning
+
+Project Proposition
+
+Submitted by
+Peter Ghadban (2206776)
+Matthieu Josse (2404844)
+Tássyla Lissa Lima (2486272)
+João Felipe Pereira Carvalho (2486812)
+
+Submitted on
+November 14 2025
+
+INF8250AE​ ​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+Project Proposition
+
+Problem Definition
+Reinforcement Learning (RL) courses introduce several classes of algorithms - value-based
+methods (e.g., Q-learning, DQN), policy-gradient methods (e.g., REINFORCE), and actor–critic
+methods (e.g., A2C, PPO). These algorithms are typically taught in isolation and demonstrated
+on small toy environments such as CartPole or simple gridworlds. Consequently, students rarely
+develop an intuition for how different RL methods behave when exposed to the same
+environment, especially one requiring long-term planning and multi-step strategy.
+This project proposes to build an educational Jupyter notebook that compares multiple RL
+algorithms within a common, richer environment: CivRealm, the Gym-compatible RL interface
+for the Civilization-inspired strategy environment built on Freeciv-web. CivRealm offers
+mini-games and scenarios that involve spatial reasoning, multi-step decision-making, adversarial
+interactions, resource management, and delayed rewards. These characteristics offer a much
+more realistic RL challenge than standard benchmarks, enabling students better to understand
+algorithmic strengths, weaknesses, and learning dynamics.
+The goal is to answer:
+How do widely used RL algorithms differ in sample efficiency, stability, learned
+behaviour, and convergence when trained on the same CivRealm mini-game?
+This question is both pedagogically meaningful and technically non-trivial. The result will be a
+reusable teaching notebook for future RL students.
+
+Prior Work
+CivRealm​
+CivRealm was introduced as an RL + reasoning benchmark inspired by the Civilization game
+series. It exposes a tensor-based Gym interface enabling RL agents to interact with the
+environment. The authors propose several mini-games (e.g., focused on tactical combat or
+simplified development tasks) that compress the full strategic environment into structured,
+trainable scenarios. Their work highlights that canonical RL algorithms can learn in mini-games
+but struggle in full-scale open-ended gameplay because of long horizons, large state spaces, and
+complex multi-agent dynamics. The link to the repository is in the References section at the end
+of the document.
+
+RL in complex strategy environments​
+Recent work explores RL in strategy games such as Freeciv, the Tribes multi-agent framework,
+and broader environments requiring planning and reasoning. These works show that strategy
+games provide rich and challenging testing grounds for RL systems. However, they are generally
+
+INF8250AE​ ​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+Project Proposition
+
+research-driven rather than educational, often focusing on performance benchmarks rather than
+conceptual understanding.
+
+Educational RL material​
+Most available notebooks demonstrate one algorithm per simple environment, which helps
+explain fundamentals but does not illustrate how algorithms behave relative to one another.
+Educational comparisons across several algorithms in one environment are rare, especially in a
+strategic domain like CivRealm. This proposal seeks to fill that gap with a structured,
+student-friendly comparison.
+
+Goals
+We aim to produce a polished Jupyter notebook that can serve both as:
+●​ A teaching resource (step-by-step explanations of RL algorithms applied to CivRealm)
+●​ A small comparative study of those algorithms on one or two CivRealm mini-games.
+Concretely, we intend to:
+1.​ Choose one or two CivRealm mini-games (as defined under src/civrealm) suitable for
+teaching:
+●​ Limited map size and actions;
+●​ Manageable training times;
+●​ Still rich enough to show meaningful strategic differences between agents.
+2.​ Implement and/or adapt several RL algorithms with a unified API:
+●​ A value-based method (DQN) as a baseline;
+●​ A policy-gradient method (REINFORCE);
+●​ A more advanced on-policy algorithm (PPO) is already common in RL libraries.
+3.​ Run controlled experiments on the same mini-game(s), comparing:
+●​ Learning curves (episode return, win rate, episode length) vs. environment steps;
+●​ Sample efficiency and stability across random seeds;
+●​ Basic behavioural patterns (e.g., aggressiveness, expansion patterns) through
+replay or visualizations.
+4.​ Design the notebook explicitly for teaching, including:
+●​ Short theory recap sections for each algorithm (intuitive explanation + key
+equations);
+●​ Clear code cells showing the core update rules;
+●​ Visualizations of training metrics and, if possible, map-based visualizations of
+agent behaviour (e.g., trajectories, heatmaps over tiles visited).
+
+INF8250AE​ ​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+References
+Github Repository for the CivRealm Environment:
+https://github.com/bigai-ai/civrealm/tree/dev/src/civrealm
+
+​
+
+​
+
+Project Proposition
+
+

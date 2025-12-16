@@ -1,5 +1,11 @@
 results/
 
+# Model checkpoints and training artifacts
+experiments/
+*.pt
+*.pth
+*.ckpt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
